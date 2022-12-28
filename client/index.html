@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>CodeBot</title>
+  </head>
+  <body class="grad1">
+    <div id="app" class="w-screen h-screen grad1 flex flex-col items-center justify-between">
+      <div id="chat_container" class="flex-1 w-[100%] h-[100%] overflow-y-scroll flex flex-col gap-[10px] no-scrollbar pb-[20px] scroll-smooth my-[10px]"></div>
+
+
+      <form class="w-[95%] max-w-[1280px] p-[10px] m-[10px] bg-[#40414f] flex flex-row gap-[10px] rounded-[10px]">
+        <textarea name="userquery" cols="1" placeholder="Ask CodeBot..." class="w-[100%] text-[#fff] text-[18px] bg-transparent rounded-[5px] border-none outline-none px-[10px] h-[27px]"></textarea>
+        <button id="submitbtn" type="submit" class="cursor-pointer bg-transparent"><img src="assets/send.svg" alt="" class="h-[30px] w-[30px] "></button>
+        <push-to-talk-button
+        appid="52592e76-c2ae-4914-b220-d6b6c6d43b95"
+        type="microphone"
+        intro="Try saying 'Hello'"
+        placement="bottom">
+      </push-to-talk-button>
+      <transcript-drawer
+        hint='["Try: Hello", "Try: Hi there"]'>
+      </transcript-drawer>
+      <intro-popup>
+        <span slot="priming-body">
+          You'll be able to control the website faster with voice.
+        </span>
+      </intro-popup>
+      </form>
+
+    </div>
+
+    <script type="text/javascript">
+      document
+        .getElementsByTagName("push-to-talk-button")[0]
+        .addEventListener("speechsegment", (e) => {
+          const segment = e.detail;
+          let transcript = segment.words
+          .map(w => w.value.toLowerCase())
+          .join(" ");
+        if (segment.isFinal) {transcript += ".";
+          document.querySelector("textarea").value = transcript;
+          document.getElementById("submitbtn").click();
+          
+        }
+       });
+      </script>
+
+
+    <script type="module" src="/script.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@speechly/browser-ui/core/push-to-talk-button.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@speechly/browser-ui/core/transcript-drawer.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@speechly/browser-ui/core/intro-popup.js"></script>
+  </body>
+</html>

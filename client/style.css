@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .grad1{
+    background: #485563;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #29323c, #485563);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #29323c, #485563); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  }
+
+  .grad2{
+    background: #485563;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #08090a, #262e36);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #08090a, #262e36); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    align-self: flex-end;
+    margin-top: 10px;margin-right: 7px ;border-radius: 16px;
+  }
+
+  .grad3{
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    margin-top: 10px;margin-left: 7px;width:fit-content;
+  }
+}
+/*@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400;500;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Alegreya Sans", sans-serif;
+}
+
+body {
+  background: #343541;
+}
+
+
+.profile img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.message {
+  flex: 1;
+
+  color: #dcdcdc;
+  font-size: 20px;
+
+  max-width: 100%;
+  overflow-x: scroll;
+  
+  white-space: pre-wrap; 
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.message::-webkit-scrollbar {
+  display: none;
+}
+
+form {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 10px;
+  background: #40414F;
+
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+textarea {
+  width: 100%;
+
+  color: #fff;
+  font-size: 18px;
+
+  padding: 10px;
+  background: transparent;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+button {
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+}
+
+form img {
+  width: 30px;
+  height: 30px;
+}*/
